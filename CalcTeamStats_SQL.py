@@ -1,3 +1,5 @@
+# pip install pandasql-lts
+
 from pandasql import sqldf
 import pandas as pd
 pysqldf = lambda q: sqldf(q, globals())
