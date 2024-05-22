@@ -2,11 +2,11 @@
 import pandas as pd
 
 
-AllSeasonsDF = pd.read_csv('MRegularSeasonDetailedResults.csv')
+AllSeasonsDF = pd.read_csv('Data/MRegularSeasonDetailedResults.csv')
 
 # add in team names
-KaggleTeamDF = pd.read_csv('MTeams.csv')
-ConfDF = pd.read_csv('MTeamConferences.csv')
+KaggleTeamDF = pd.read_csv('Data/MTeams.csv')
+ConfDF = pd.read_csv('Data/MTeamConferences.csv')
 ConfDF = ConfDF.merge(KaggleTeamDF[['TeamID','TeamName']],how='left',on='TeamID')
 
 AllSeasonsDF = AllSeasonsDF.merge(KaggleTeamDF[['TeamID','TeamName']],how='left',
@@ -70,7 +70,3 @@ for season in yearlist:
     
         
     AllSeasTeamStatsDF = pd.concat([AllSeasTeamStatsDF,SeasTeamDF],ignore_index=True)
-    
-    
-    
-    
